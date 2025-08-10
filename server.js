@@ -13,8 +13,14 @@ const app=express();
 const port=process.env.PORT || 4000
 connectDB();
 
-const allowedOrigins =['http://localhost:5173']
-app.use(cors({allowedOrigins}))
+// const allowedOrigins =['http://localhost:5173']
+// app.use(cors({allowedOrigins}))
+const allowedOrigins = ['http://localhost:5173', 'https://book-shop-frontend-eta.vercel.app'];
+app.use(cors({
+  origin: allowedOrigins,            
+  credentials: true
+}));
+
 app.use(express.json())
 app.use('/api/auth', authRouter)
 app.use('/api/auth', adminBookRouter)
