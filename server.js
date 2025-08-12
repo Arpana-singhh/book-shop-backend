@@ -15,7 +15,7 @@ connectDB();
 
 // const allowedOrigins =['http://localhost:5173']
 // app.use(cors({allowedOrigins}))
-const allowedOrigins = "https://book-shop-frontend-eta.vercel.app"
+const allowedOrigins = ["https://book-shop-frontend-eta.vercel.app","http://localhost:5173"]
  
 app.use(cors({
   origin: allowedOrigins,            
