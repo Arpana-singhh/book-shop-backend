@@ -20,8 +20,6 @@ const allowedOrigins = "https://book-shop-frontend-eta.vercel.app"
 app.use(cors({
   origin: allowedOrigins,            
   credentials: true, // Allow cookies or auth headers
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization", "token"],
 }));
 
 app.use(express.json())
