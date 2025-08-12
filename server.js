@@ -15,10 +15,13 @@ connectDB();
 
 // const allowedOrigins =['http://localhost:5173']
 // app.use(cors({allowedOrigins}))
-const allowedOrigins = ['http://localhost:5173', 'https://book-shop-frontend-eta.vercel.app'];
+const allowedOrigins = "https://book-shop-frontend-eta.vercel.app"
+ 
 app.use(cors({
   origin: allowedOrigins,            
-  credentials: true
+  credentials: true, // Allow cookies or auth headers
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization", "token"],
 }));
 
 app.use(express.json())
